@@ -1,0 +1,2639 @@
+{
+    "contentfulAccessToken": "CFPAT-Uy5iIWbTlZ7p8BPVpU3CLnFReu_rJm86Kcr7Ce3QVu0",
+    "contentfulSpaceId": "uk6ulrkd3did",
+    "contentfulOrganizationId": "6E7PniffSWKa2ouf5CyLAO",
+    "site": {
+        "config": {
+            "data": {
+                "title": "Azimuth Gatsby Contentful Demo"
+            }
+        },
+        "stackbitYaml": {
+            "uploadDir": "images"
+        },
+        "absPath": ".",
+        "staticDir": "."
+    },
+    "cmsConsts": {
+        "pageContentFieldKey": "content",
+        "referenceTypeKey": "type",
+        "shouldAddReferenceTypeKeyField": false
+    },
+    "models": [
+        {
+            "type": "page",
+            "name": "landing",
+            "label": "Landing Page"
+        },
+        {
+            "type": "page",
+            "name": "page",
+            "label": "Page"
+        },
+        {
+            "type": "page",
+            "name": "post",
+            "label": "Post"
+        },
+        {
+            "type": "data",
+            "name": "config",
+            "label": "Global Site Config"
+        }
+    ],
+    "modelsByName": {},
+    "content": [
+        {
+            "modelName": "page",
+            "modelType": "page",
+            "relPath": "page",
+            "data": {
+                "title": "What’s a Headless CMS and Why Should You Care?",
+                "slug": "cms-guide",
+                "subtitle": "What you need to know about headless content management systems and where to go from here to explore and use a headless CMS in your project.",
+                "content": "The history of managing content on the web dates back to the beginning of the web’s existence. A [Content Management System](https://en.wikipedia.org/wiki/Content_management_system) (CMS) is a tool that can manage the creation and modification of digital content. In the 2000s we moved to an era where managing content was facilitated by open-source CMS, also known as a coupled or traditional CMS, like [Wordpress](http://www.wordpress.com), [Joomla](https://www.joomla.org/), and [Drupal](https://www.drupal.org/). These systems allow users to manage both the frontend and backend of the application in one location.\n\nFast forward to today, we have shifted to a different approach with even better ways of managing content called the headless CMS. This approach lets you decouple the backend from the frontend, allowing you to pull and manage content via an API. Let's look at what you need to know about headless content management systems and where to go from here to explore and use a headless CMS in your project.\n\n## Headless CMS the what?\n\nUnlike the traditional CMS, where both the frontend and backend layer are coupled (meaning they cannot be separated from one another), a headless CMS is a content management system where the content “body” is decoupled from the frontend display, and the developer is provided content as data over an API.\n\nA headless CMS is frontend agnostic. This means that content is delivered raw, and the developer chooses how the data is presented to the end-user using any framework or tool of choice.\n\n## Traditional vs Headless vs Decoupled CMS\n\n### Traditional CMS\n\nA traditional CMS also called a coupled CMS serves and maintains the backend and frontend layer of the system. The system consists of a database for storing the content, the frontend for displaying the content and the backend that houses the functionality of the content management system. Working with a traditional CMS, every single part of the system - frontend, backend, database - exist as an inseparable part of the CMS. This kind of platform also typically provides a [(WYSIWYG) “What You See Is What You Get”](https://en.wikipedia.org/wiki/WYSIWYG) interface for creating content.\n\n### Headless CMS\n\nThe headless CMS differs from the traditional approach where the backend is only used for managing content and the frontend (“head”) is disconnected, leading to the name headless. The content is published to an API where the data can be consumed across different platforms such as web, mobile, AR/VR, chat, voice, etc. One benefit of using this approach is the same content can be managed within one system but distributed across several platforms, like a website, a mobile app or even an IoT or voice-enabled device.\n\n### Decoupled CMS\n\nThe headless CMS is considered a sub-set of a decoupled CMS, which does include an actual frontend layer.  However, the decoupled content system is managed by two different systems. The API layer and an added frontend layer where the final content is published. The difference between the decoupled and coupled (traditional) system is that the former have the frontend and backend system independent of one another, communicating with each other through calls made to the API.\n\n## Benefits of Headless CMS\n\nWhen you leverage a headless CMS in managing your content, you get the following benefits out-of-the-box.\n\n1. **Omnichannel Approach:** The content created in a headless CMS is capable of being displayed on any device ranging from mobile, web, AR/VR, IoT, etc. while being managed from one backend.\n2. **Improved Security:** Headless CMS typically provide content via a read-only API and there is no database to secure. In addition, many allow integration with a via high-performance CDN rather than directly from the database which lowers the risks of [DDoS attacks](https://www.keycdn.com/support/ddos-attack).\n3. **Scalability:** The approach of keeping the frontend and backend decoupled means there limits or eliminates downtime and you can scale, upgrade or customize your website without performance rundown. \n4. **Flexibility:** The headless approach is more flexible for developers because they have the freedom to build with a frontend framework of choice that fits the project they are working on while, with the traditional approach, the level to which a developer may customize is often limited, which can get frustrating.\n\n## Git-based vs API-Driven CMS \n\nThe [headless CMS](https://paper.dropbox.com/doc/A-Deep-Dive-into-Headless-CMS--Ato1Ez13fyNCxOtAgrEfQnswAg-g7CTqko9ISC0QmUgEtBIi#:uid=044557498871472978206522&h2=Headless-CMS-the-what?) is further divided into two different categories, the Git-based and the API-driven CMS. I’ll go over each of them briefly to give you an idea of what they are made of and share examples of each of them.\n\n### Git-based CMS\n\nA Git-based CMS does not store your content in its system. Instead, it applies a layer of CMS functionality to manage content in a git repository. When changes are pushed to git, it triggers a new build of your site. What this means is your content resides in a git repository and, every time new content is added or edited, it triggers a commit on git. Git serves as the database for storing all the content. Platforms that provide this service include [Netlify CMS](https://www.netlifycms.org/), [](http://jaredforsyth.com/hexo-admin/)[Jekyll](https://jekyll.github.io/jekyll-admin/) [Admin](https://jekyll.github.io/jekyll-admin/), [Forestry](https://forestry.io/), etc.\n\n### API-Driven CMS\n\nWith API driven (or API-first) CMS, the content is stored within the CMS and provided to you via an API. The API can either be a [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) or GraphQL depending on the platform you use. The API provides the raw content and metadata and you consume the data provided via the framework or language you choose. Platforms that provide this service include [Sanity](https://www.sanity.io/), [Ghost](https://ghost.org/), [DatoCMS](https://www.datocms.com/), [Strapi](https://strapi.io/), and [Contentful](https://www.contentful.com/).\n"
+            }
+        },
+        {
+            "modelName": "page",
+            "modelType": "page",
+            "relPath": "page",
+            "data": {
+                "title": "About Us",
+                "slug": "about",
+                "subtitle": "This is an optional subtitle. It can be used to describe what this page is about.",
+                "img_path": "images/about.jpg",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. Nulla a interdum lacus. Sed a porttitor mi. Sed at risus eu orci ultricies mattis sed in tellus. Cras nec neque sed dui vehicula iaculis id vel ex. Phasellus non consectetur augue. Pellentesque condimentum sapien arcu, nec tempus nunc maximus eu. Duis blandit risus nulla. In dolor dui, placerat non finibus sit amet, venenatis pretium tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nNunc a lorem tellus. Aenean eu auctor purus. Cras pulvinar, nunc at sagittis dignissim, orci elit auctor leo, et consectetur est turpis a nunc. Vivamus in faucibus felis. Aenean rutrum magna at ex auctor, congue efficitur ligula feugiat. Proin a egestas arcu. Etiam feugiat turpis quis mollis pellentesque. Sed posuere luctus tortor, a eleifend augue varius sit amet. Integer ultrices neque sed quam dictum, quis vestibulum justo volutpat. Nam vitae tempus leo, ut mattis mi.\n"
+            }
+        },
+        {
+            "modelName": "post",
+            "modelType": "page",
+            "relPath": "post",
+            "data": {
+                "title": "What is a Headless CMS and Why Should You Care?",
+                "slug": "headless-cms",
+                "subtitle": "Here's what you need to know about headless content management systems.",
+                "date": "2019-04-23",
+                "thumb_img_path": "images/Whats_a_Headless_CMS.png",
+                "img_path": "images/Whats_a_Headless_CMS.png",
+                "excerpt": "Gift Egwuenu discusses what you need to know about headless content management systems, such as what a headless CMS is and what the benefits and use cases of using the headless CMS are.",
+                "content": "The history of managing content on the web dates back to the beginning of the web’s existence. A Content Management System (CMS) is a tool that can manage the creation and modification of digital content. In the 2000s we moved to an era where managing content was facilitated by open-source CMS, also known as a coupled or traditional CMS, like Wordpress, Joomla, and Drupal. These systems allow users to manage both the frontend and backend of the application in one location.\n\nFast forward to today, we have shifted to a different approach with even better ways of managing content called the headless CMS. This approach lets you decouple the backend from the frontend, allowing you to pull and manage content via an API. In this article, I’ll cover what you need to know about headless content management systems and where to go from here to explore and use a headless CMS in your project.\n\n[Read the full post](https://www.stackbit.com/blog/what-is-a-headless-cms/)"
+            }
+        },
+        {
+            "modelName": "post",
+            "modelType": "page",
+            "relPath": "post",
+            "data": {
+                "title": "Extending JAMstack: 10 APIs and Tools to check out in 2020",
+                "slug": "extending-jamstack",
+                "subtitle": "An extensive list of APIs and tools you can leverage.",
+                "date": "2019-03-27",
+                "thumb_img_path": "images/10_APIs_to_Check_Out.png",
+                "img_path": "images/10_APIs_to_Check_Out.png",
+                "excerpt": "The ongoing conversation about JAMstack has moved from being just a stack for creating static sites to a stack for developing dynamic web applications. Let’s take a look at an extensive list of APIs and tools you can leverage.",
+                "content": "The JAMstack ecosystem has evolved over the past few years. It’s been getting more popular as people have moved on from the mistaken notion that only static sites can be rendered using this architecture. We see developers and companies adopting it and creating fast and dynamic web applications with helpful services and APIs while maintaining the benefits of the JAMstack, which prioritizes performance, scalability and developer experience.\n\n## The \"A\" in the JAMstack\n\nThe A in JAMstack stands for APIs. We no longer need to worry about dealing with traditional back-end - server-side operations can now be abstracted into reusable APIs and accessed over HTTPS with JavaScript. These can be third-party services or your custom function written as [Functions as a Service](https://en.wikipedia.org/wiki/Function_as_a_service) (serverless functions). Let’s explore a list of useful APIs and related tools that can make your JAMstack projects dynamic.\n\n[Read the full post](https://www.stackbit.com/blog/extending-jamestack-2020/)"
+            }
+        },
+        {
+            "modelName": "post",
+            "modelType": "page",
+            "relPath": "post",
+            "data": {
+                "title": "15 JAMstack Resources You Need as a Web Developer",
+                "slug": "jamstack-resources",
+                "subtitle": "These are the links that you need as a JAMstack developer.",
+                "date": "2019-04-22",
+                "thumb_img_path": "images/1574253736-jamstack-resources.png",
+                "img_path": "images/1574253736-jamstack-resources.png",
+                "excerpt": "Whether you are getting started or already advanced, these are the links that you'll need as a JAMstack developer.",
+                "content": "The other day my friend Ray and I were asked about whether our book, \"Working with Static Sites\", was still relevant for learning the tools today. My answer was essentially that everything would still technically work but that it probably no longer represented the beliefs and best practices of today. Sure, JAMstack was a thing without a name yet at the time, but so much else has changed in the subsequent years beyond just what we call it.\n\nSo what resources would I recommend for developers working with the JAMstack today? Let's take a look at resources for everything from getting started to advanced topics to community.\n\n[Read the full post](https://www.stackbit.com/blog/15-jamstack-resources/)"
+            }
+        },
+        {
+            "modelName": "page",
+            "modelType": "page",
+            "relPath": "page",
+            "data": {
+                "title": "Sign Up",
+                "slug": "signup",
+                "subtitle": "This is an optional subtitle. It can be used to describe what this page is about.",
+                "img_path": "images/11.jpg",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula, eu malesuada tortor eros dapibus mi. Proin laoreet efficitur suscipit. Donec molestie volutpat euismod. Nulla gravida ligula in eros facilisis, sed dignissim tellus aliquam. Etiam convallis enim nisi, at suscipit tortor pulvinar at. Nulla a interdum lacus. Sed a porttitor mi. Sed at risus eu orci ultricies mattis sed in tellus. Cras nec neque sed dui vehicula iaculis id vel ex. Phasellus non consectetur augue. Pellentesque condimentum sapien arcu, nec tempus nunc maximus eu. Duis blandit risus nulla. In dolor dui, placerat non finibus sit amet, venenatis pretium tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nNunc a lorem tellus. Aenean eu auctor purus. Cras pulvinar, nunc at sagittis dignissim, orci elit auctor leo, et consectetur est turpis a nunc. Vivamus in faucibus felis. Aenean rutrum magna at ex auctor, congue efficitur ligula feugiat. Proin a egestas arcu. Etiam feugiat turpis quis mollis pellentesque. Sed posuere luctus tortor, a eleifend augue varius sit amet. Integer ultrices neque sed quam dictum, quis vestibulum justo volutpat. Nam vitae tempus leo, ut mattis mi.\n"
+            }
+        },
+        {
+            "modelName": "landing",
+            "modelType": "page",
+            "relPath": "landing",
+            "data": {
+                "title": "Contact",
+                "slug": "contact",
+                "sections": [
+                    {
+                        "section_id": "contact",
+                        "title": "Contact",
+                        "subtitle": "Contact Subtitle",
+                        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a metus quis lorem malesuada luctus. Cras lacinia, eros at dapibus molestie, risus tortor pretium ligula.",
+                        "bg": "gray",
+                        "type": "section_contact"
+                    }
+                ]
+            }
+        },
+        {
+            "modelName": "action",
+            "modelType": "object",
+            "relPath": "action",
+            "data": {
+                "label": "LinkedIn",
+                "url": "https://www.linkedin.com/",
+                "new_window": true
+            }
+        },
+        {
+            "modelName": "landing",
+            "modelType": "page",
+            "relPath": "landing",
+            "data": {
+                "title": "Features",
+                "slug": "features",
+                "sections": [
+                    {
+                        "section_id": "features",
+                        "title": "The Best Way to JAMstack",
+                        "content": "Stackbit enables teams to edit on-page, share previews and monitor builds without ever leaving their site. Best of all, it takes only minutes to integrate - no code changes required.\n\n* **Inline editing** - Stackbit integrates with your CMS to enable on-page WYSIWYG editing. No more wasted time searching for that headline in the CMS.\n* **Preview and share changes** - We'll notify you when content changes and let you instantly view and share previews.\n* **Realtime site status** - Stackbit automatically detects site rebuilds, lets you monitor build status and build logs, and offers quick access to your connected services.\n\nWe're currently onboarding select customers to the full Stackbit experience.",
+                        "image": "images/Screen_Shot_2020-03-14_at_6.26.17_PM.png",
+                        "bg": "gray",
+                        "actions": [
+                            {
+                                "label": "Get Early Access",
+                                "url": "https://www.stackbit.com/#early-access",
+                                "primary": false,
+                                "new_window": false,
+                                "type": "action"
+                            },
+                            {
+                                "label": "View Demo",
+                                "url": "https://www.stackbit.com/#demo",
+                                "type": "action"
+                            }
+                        ],
+                        "type": "section_content"
+                    },
+                    {
+                        "section_id": "call-to-action",
+                        "title": "Get Stackbit on Your Site!",
+                        "subtitle": "We're looking for developers and companies to take part in our early access. Tell us about your project.",
+                        "actions": [
+                            {
+                                "label": "Get Early Access",
+                                "url": "https://www.stackbit.com/#early-access",
+                                "type": "action"
+                            }
+                        ],
+                        "type": "section_cta"
+                    }
+                ]
+            }
+        },
+        {
+            "modelName": "config",
+            "modelType": "object",
+            "relPath": "config",
+            "data": {
+                "title": "Stackbit Azimuth Theme",
+                "palette": "purple",
+                "header": {
+                    "title": "Azimuth",
+                    "logo_img": "images/logo.png",
+                    "has_nav": true,
+                    "nav_links": [
+                        {
+                            "label": "Home",
+                            "url": "/",
+                            "type": "action"
+                        },
+                        {
+                            "label": "Features",
+                            "url": "/features",
+                            "type": "action"
+                        },
+                        {
+                            "label": "Pricing",
+                            "url": "/pricing",
+                            "type": "action"
+                        },
+                        {
+                            "label": "CMS Guide",
+                            "url": "/cms-guide",
+                            "type": "action"
+                        },
+                        {
+                            "label": "Sign Up",
+                            "url": "/signup",
+                            "primary": true,
+                            "new_window": false,
+                            "type": "action"
+                        }
+                    ]
+                },
+                "footer": {
+                    "logo_img": "images/logo_alt.png",
+                    "tagline": "SaaS theme by Stackbit",
+                    "has_nav": true,
+                    "nav_title": "Company",
+                    "nav_links": [
+                        {
+                            "label": "About Us",
+                            "url": "/about",
+                            "type": "action"
+                        },
+                        {
+                            "label": "Sign Up",
+                            "url": "https://www.stackbit.com/#early-access",
+                            "type": "action"
+                        },
+                        {
+                            "label": "Blog",
+                            "url": "/blog",
+                            "type": "action"
+                        },
+                        {
+                            "label": "Contact",
+                            "url": "/contact",
+                            "type": "action"
+                        }
+                    ],
+                    "has_social": true,
+                    "social_title": "Community",
+                    "social_links": [
+                        {
+                            "label": "Twitter",
+                            "url": "https://twitter.com/stackbithq",
+                            "new_window": true,
+                            "type": "action"
+                        },
+                        {
+                            "label": "GitHub",
+                            "url": "https://github.com/stackbithq",
+                            "new_window": true,
+                            "type": "action"
+                        }
+                    ],
+                    "has_subscribe": true,
+                    "subscribe_title": "Subscribe",
+                    "subscribe_content": "Stay up to date with our latest developments.",
+                    "content": "&copy; Stackbit. All rights reserved.",
+                    "links": [
+                        {
+                            "label": "Made with Stackbit",
+                            "url": "https://www.stackbit.com",
+                            "primary": false,
+                            "new_window": true,
+                            "type": "action"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "modelName": "landing",
+            "modelType": "page",
+            "relPath": "landing",
+            "data": {
+                "title": "Pricing",
+                "slug": "pricing",
+                "sections": [
+                    {
+                        "section_id": "pricing",
+                        "title": "Pricing Plans",
+                        "subtitle": "Stackbit is available via our early access program. Pricing details are coming soon.",
+                        "bg": "gray",
+                        "pricingplans": [
+                            {
+                                "title": "Basic",
+                                "price": "5 Bell/m",
+                                "details": "* Inline editing\n* Preview and share changes\n* Real-time status updates",
+                                "actions": [
+                                    {
+                                        "label": "Order Now",
+                                        "url": "/signup",
+                                        "type": "action"
+                                    }
+                                ],
+                                "type": "section_pricing_pricingplans"
+                            },
+                            {
+                                "title": "Professional",
+                                "price": "49 Bell/m",
+                                "details": "* Inline editing\n* Preview and share changes\n* Real-time status updates",
+                                "highlight": false,
+                                "actions": [
+                                    {
+                                        "label": "Order Now",
+                                        "url": "/signup",
+                                        "type": "action"
+                                    }
+                                ],
+                                "type": "section_pricing_pricingplans"
+                            },
+                            {
+                                "title": "Enterprise",
+                                "price": "Contact us",
+                                "details": "* Inline editing\n* Preview and share changes\n* Real-time status updates",
+                                "highlight": false,
+                                "actions": [
+                                    {
+                                        "label": "Order Now",
+                                        "url": "/signup",
+                                        "type": "action"
+                                    }
+                                ],
+                                "type": "section_pricing_pricingplans"
+                            }
+                        ],
+                        "type": "section_pricing"
+                    },
+                    {
+                        "section_id": "faq",
+                        "title": "Frequently Asked Questions",
+                        "subtitle": "Have questions? We have answers.",
+                        "bg": "gray",
+                        "faqitems": [
+                            {
+                                "question": "What CMS does Stackbit support?",
+                                "answer": "The goal of Stackbit is to support any site, regardless of which headless CMS they choose. However, at this stage of development we currently support Contentful, Sanity and Forestry. If your company has a different set of requirements, we still encourage you to [request early access](https://www.stackbit.com/#early-access) and we'd be happy to explore how we can address your needs.",
+                                "type": "section_faq_faqitems"
+                            },
+                            {
+                                "question": "What Static Site Generator does Stackbit support?",
+                                "answer": "The goal of Stackbit is to support any site, regardless of what tools were used to build them. However, at this stage of development we currently support sites built with Gatsby, Next.js and Hugo with support for Jekyll on the near term roadmap. If your company has a different set of requirements, we still encourage you to [request early access](https://www.stackbit.com/#early-access) and we'd be happy to explore how we can address your needs.",
+                                "type": "section_faq_faqitems"
+                            },
+                            {
+                                "question": "What deployment options does Stackbit support?",
+                                "answer": "The goal of Stackbit is to support any site, regardless of where and how you deploy it. At this stage of development we are optimized for deployments to Netlify but are capable of supporting a variety of other options. We encourage you to [request early access](https://www.stackbit.com/#early-access) and we're happy to explore how we can address your needs.",
+                                "type": "section_faq_faqitems"
+                            }
+                        ],
+                        "type": "section_faq"
+                    }
+                ]
+            }
+        },
+        {
+            "modelName": "landing",
+            "modelType": "page",
+            "relPath": "landing",
+            "data": {
+                "title": "Home",
+                "slug": "/",
+                "sections": [
+                    {
+                        "section_id": "hero",
+                        "title": "Editing, Previewing and Much More",
+                        "content": "Stackbit lets you make changes inline, preview and share those changes and see real time status updates. Give it a try and edit me!",
+                        "image": "images/crane.png",
+                        "actions": [
+                            {
+                                "label": "Learn More",
+                                "url": "/features",
+                                "type": "action"
+                            },
+                            {
+                                "label": "Stackbit",
+                                "url": "https://www.stackbit.com/",
+                                "primary": false,
+                                "new_window": true,
+                                "type": "action"
+                            }
+                        ],
+                        "type": "section_hero"
+                    },
+                    {
+                        "section_id": "features",
+                        "title": "Features",
+                        "subtitle": "Stackbit enables teams to edit on-page, share previews and monitor builds without ever leaving their site. Let's see how.",
+                        "bg": "gray",
+                        "featureslist": [
+                            {
+                                "title": "Inline Editing",
+                                "content": "See the editing UI on the right hand side of this page? It allows you to make changes to any part of this page, including page attributes and metadata, and see what those changes look like *live*! Go ahead and start making some changes. We think you'll be impressed.",
+                                "image": "images/Screen_Shot_2020-03-14_at_6.26.17_PM.png",
+                                "actions": [
+                                    {
+                                        "label": "Learn More",
+                                        "url": "/features",
+                                        "type": "action"
+                                    }
+                                ],
+                                "type": "section_features_featureslist"
+                            },
+                            {
+                                "title": "Preview and Share Changes",
+                                "content": "Prevent mistakes by seeing changes as you make them. Need to get approval before pubishing? Click the to share a \"realtime link\" to allow others to see changes as you make them. Or click \"snapshot link\" to share a snapshot of the current changes.",
+                                "image": "images/Screen_Shot_2020-03-14_at_6.27.54_PM.png",
+                                "actions": [
+                                    {
+                                        "label": "Learn More",
+                                        "url": "/features",
+                                        "type": "action"
+                                    }
+                                ],
+                                "type": "section_features_featureslist"
+                            },
+                            {
+                                "title": "Real-Time Status Updates",
+                                "content": "The Stackbit editing UI will inform you of any pending changes on your site waiting to be published. Once you are ready, click \"publish\" and you'll get up to the second updates on the rebuild and deployment of your site!",
+                                "image": "images/Screen_Shot_2020-03-14_at_6.31.00_PM.png",
+                                "actions": [
+                                    {
+                                        "label": "Learn More",
+                                        "url": "/features",
+                                        "new_window": false,
+                                        "type": "action"
+                                    }
+                                ],
+                                "type": "section_features_featureslist"
+                            }
+                        ],
+                        "type": "section_features"
+                    },
+                    {
+                        "section_id": "reviews",
+                        "title": "Testimonials",
+                        "subtitle": "Stackbit is a game-changer for modern web sites - and it has people talking.",
+                        "bg": "white",
+                        "reviews": [
+                            {
+                                "author": "Simen Svale Skogsrud",
+                                "avatar": "images/Tcphgl0Z_400x400.jpg",
+                                "content": "StackBit Live is the missing glue between the headless CMS and your website. Awesome lightning launch by @ohadpr and @stackbithq at #jamstackconf SF.",
+                                "type": "section_reviews_reviews"
+                            },
+                            {
+                                "author": "Hugh Durkin",
+                                "avatar": "images/iHIyzH7x_400x400.jpg",
+                                "content": "Pretty epic update from @stackbithq 😍 Great to have @Netlify build status in the same control center, too. \n\nAwesome to see how quickly #JamStack products and platforms are evolving 🚀",
+                                "type": "section_reviews_reviews"
+                            },
+                            {
+                                "author": "Thomas Randolph",
+                                "avatar": "images/ja4o3yRN_400x400.jpg",
+                                "content": "Eliminate the unknowns between services with @stackbithq's on-site widget that shows the status of everything it takes to make your site (and changes) live (w/ @ohadpr) #jamstackconf",
+                                "type": "section_reviews_reviews"
+                            }
+                        ],
+                        "type": "section_reviews"
+                    },
+                    {
+                        "section_id": "call-to-action",
+                        "title": "Get Stackbit on Your Site!",
+                        "subtitle": "We're looking for developers and companies to take part in our early access. Tell us about your project.",
+                        "actions": [
+                            {
+                                "label": "Get Early Access",
+                                "url": "https://www.stackbit.com/#early-access",
+                                "new_window": true,
+                                "type": "action"
+                            }
+                        ],
+                        "type": "section_cta"
+                    },
+                    {
+                        "section_id": "recent-posts",
+                        "title": "Latest Posts",
+                        "subtitle": "The tutorials and information you need!",
+                        "bg": "gray",
+                        "type": "section_posts"
+                    }
+                ]
+            }
+        },
+        {
+            "modelName": "section_content",
+            "modelType": "object",
+            "relPath": "section_content",
+            "data": {
+                "section_id": "my_content_section",
+                "title": "Hello World",
+                "content": "Lorem Ipsum",
+                "bg": "gray",
+                "actions": [
+                    {
+                        "label": "Go",
+                        "url": "#",
+                        "type": "action"
+                    }
+                ]
+            }
+        },
+        {
+            "modelName": "section_features_featureslist",
+            "modelType": "object",
+            "relPath": "section_features_featureslist",
+            "data": {
+                "title": "Demo",
+                "content": "## Lorem ipsum\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n- Lorem ipsum\n- dolor sit amet"
+            }
+        },
+        {
+            "modelName": "section_features_featureslist",
+            "modelType": "object",
+            "relPath": "section_features_featureslist",
+            "data": {
+                "title": "Another DEMO",
+                "content": "## Lorem ipsum\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n- Lorem ipsum\n- dolor sit amet"
+            }
+        }
+    ],
+    "contentTypes": [
+        {
+            "id": "action",
+            "name": "Action",
+            "displayField": "label",
+            "description": null,
+            "fields": [
+                {
+                    "id": "label",
+                    "name": "Label",
+                    "type": "Text",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "url",
+                    "name": "URL",
+                    "type": "Text",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "primary",
+                    "name": "Primary",
+                    "type": "Boolean",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "new_window",
+                    "name": "Open in new window",
+                    "type": "Boolean",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "label": {
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "url": {
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "primary": {
+                    "settings": {
+                        "helpText": "Is primary action (used in header menu only)",
+                        "readOnly": false,
+                        "defaultValue": false
+                    },
+                    "widgetId": "default-boolean-value",
+                    "widgetNamespace": "extension"
+                },
+                "new_window": {
+                    "settings": {
+                        "readOnly": false,
+                        "defaultValue": false
+                    },
+                    "widgetId": "default-boolean-value",
+                    "widgetNamespace": "extension"
+                }
+            }
+        },
+        {
+            "id": "config_footer",
+            "name": "Global Site Config Footer Configuration",
+            "displayField": "tagline",
+            "description": "Model for 'footer' field used in 'config' model",
+            "fields": [
+                {
+                    "id": "logo_img",
+                    "name": "Logo",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "id": "tagline",
+                    "name": "Footer Tagline",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "has_nav",
+                    "name": "Enable Navigation Menu",
+                    "type": "Boolean",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "nav_title",
+                    "name": "Menu Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "nav_links",
+                    "name": "Navigation Menu Links",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                },
+                {
+                    "id": "has_social",
+                    "name": "Enable Social Links",
+                    "type": "Boolean",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "social_title",
+                    "name": "Social Links Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "social_links",
+                    "name": "Social Links",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                },
+                {
+                    "id": "has_subscribe",
+                    "name": "Enable Subscribe",
+                    "type": "Boolean",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subscribe_title",
+                    "name": "Subscribe Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subscribe_content",
+                    "name": "Subscribe Content",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "content",
+                    "name": "Footer Content",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "links",
+                    "name": "Links",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "logo_img": {
+                    "settings": {
+                        "helpText": "The logo image displayed in the footer."
+                    },
+                    "widgetId": "assetLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "tagline": {
+                    "settings": {
+                        "helpText": "The tagline displayed in the footer."
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "has_nav": {
+                    "settings": {
+                        "helpText": "Display the secondary navigation menu in the footer.",
+                        "defaultValue": true
+                    },
+                    "widgetId": "default-boolean-value",
+                    "widgetNamespace": "extension"
+                },
+                "nav_title": {
+                    "settings": {
+                        "helpText": "The title of the secondary menu displayed in the footer."
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "nav_links": {
+                    "settings": {
+                        "helpText": "List of navigation links in footer"
+                    },
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "has_social": {
+                    "settings": {
+                        "helpText": "Display social links in the footer.",
+                        "defaultValue": true
+                    },
+                    "widgetId": "default-boolean-value",
+                    "widgetNamespace": "extension"
+                },
+                "social_title": {
+                    "settings": {
+                        "helpText": "The title of the social links list displayed in the footer."
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "social_links": {
+                    "settings": {
+                        "helpText": "List of social links displayed in the footer."
+                    },
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "has_subscribe": {
+                    "settings": {
+                        "helpText": "Display the newsletter subscription form in the footer.",
+                        "defaultValue": true
+                    },
+                    "widgetId": "default-boolean-value",
+                    "widgetNamespace": "extension"
+                },
+                "subscribe_title": {
+                    "settings": {
+                        "helpText": "The title of the subscribe block displayed in the footer."
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "subscribe_content": {
+                    "settings": {
+                        "helpText": "The text content in the subscribe block displayed in the footer."
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "The copyright text displayed in the footer."
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "links": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "config_header",
+            "name": "Global Site Config Header Configuration",
+            "displayField": "title",
+            "description": "Model for 'header' field used in 'config' model",
+            "fields": [
+                {
+                    "id": "title",
+                    "name": "Header Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "logo_img",
+                    "name": "Logo",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "id": "has_nav",
+                    "name": "Enable Navigation Menu",
+                    "type": "Boolean",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "nav_links",
+                    "name": "Navigation Menu Links",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "The title displayed in the header if no logo image added."
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "logo_img": {
+                    "settings": {
+                        "helpText": "The logo image displayed in the header."
+                    },
+                    "widgetId": "assetLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "has_nav": {
+                    "settings": {
+                        "helpText": "Display the navigation menu bar in the header.",
+                        "defaultValue": true
+                    },
+                    "widgetId": "default-boolean-value",
+                    "widgetNamespace": "extension"
+                },
+                "nav_links": {
+                    "settings": {
+                        "helpText": "List of navigation links in header"
+                    },
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "config",
+            "name": "Global Site Config",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "palette",
+                    "name": "Color Palette",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "blue",
+                                "purple",
+                                "green",
+                                "orange"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "header",
+                    "name": "Header Configuration",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "linkContentType": [
+                                "config_header"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Entry"
+                },
+                {
+                    "id": "footer",
+                    "name": "Footer Configuration",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "linkContentType": [
+                                "config_footer"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Entry"
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "Site title"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "palette": {
+                    "settings": {
+                        "helpText": "The color palette of the theme.",
+                        "defaultValue": "blue"
+                    },
+                    "widgetId": "default-field-value",
+                    "widgetNamespace": "extension"
+                },
+                "header": {
+                    "widgetId": "entryLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "footer": {
+                    "widgetId": "entryLinkEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "page",
+            "name": "Page",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "slug",
+                    "name": "Slug",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": true,
+                    "validations": [
+                        {
+                            "unique": true
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "img_path",
+                    "name": "Image",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "id": "content",
+                    "name": "Content",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "The title of the page"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "slug": {
+                    "settings": {
+                        "helpText": "A string used to generate the URL path of this page."
+                    },
+                    "widgetId": "slugEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The text shown below the page title."
+                    },
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "img_path": {
+                    "settings": {
+                        "helpText": "The image shown below the page title."
+                    },
+                    "widgetId": "assetLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "Page content"
+                    },
+                    "widgetId": "markdown",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_contact",
+            "name": "Contact Section",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "section_id",
+                    "name": "Element ID of this section",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "content",
+                    "name": "Content",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "bg",
+                    "name": "Background",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "gray",
+                                "white"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "section_id": {
+                    "settings": {
+                        "helpText": "The element ID can be used to link to this section from another section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "title": {
+                    "settings": {
+                        "helpText": "The title of this section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The text shown below the title."
+                    },
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "The text content of the section, appears before contact form"
+                    },
+                    "widgetId": "markdown",
+                    "widgetNamespace": "builtin"
+                },
+                "bg": {
+                    "settings": {
+                        "helpText": "The background of the section.",
+                        "defaultValue": "gray"
+                    },
+                    "widgetId": "default-field-value",
+                    "widgetNamespace": "extension"
+                }
+            }
+        },
+        {
+            "id": "section_faq_faqitems",
+            "name": "FAQ Section FAQ Item",
+            "displayField": "question",
+            "description": "Model for 'faqitems' field used in 'section_faq' model",
+            "fields": [
+                {
+                    "id": "question",
+                    "name": "Question",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "answer",
+                    "name": "Answer",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "question": {
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "answer": {
+                    "widgetId": "markdown",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_content",
+            "name": "Content Section",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "section_id",
+                    "name": "Element ID of this section",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "content",
+                    "name": "Content",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "id": "bg",
+                    "name": "Background",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "gray",
+                                "white"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "actions",
+                    "name": "Action Buttons",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "section_id": {
+                    "settings": {
+                        "helpText": "The element ID can be used to link to this section from another section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "title": {
+                    "settings": {
+                        "helpText": "The title of this section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "The text content of the section."
+                    },
+                    "widgetId": "markdown",
+                    "widgetNamespace": "builtin"
+                },
+                "image": {
+                    "settings": {
+                        "helpText": "The image of the section."
+                    },
+                    "widgetId": "assetLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "bg": {
+                    "settings": {
+                        "helpText": "The background of the section.",
+                        "defaultValue": "gray"
+                    },
+                    "widgetId": "default-field-value",
+                    "widgetNamespace": "extension"
+                },
+                "actions": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_cta",
+            "name": "Call to Action Section",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "section_id",
+                    "name": "Element ID of this section",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "actions",
+                    "name": "Action Buttons",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "section_id": {
+                    "settings": {
+                        "helpText": "The element ID can be used to link to this section from another section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "title": {
+                    "settings": {
+                        "helpText": "The title of this section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The subtitle of the section."
+                    },
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "actions": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "post",
+            "name": "Post",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "slug",
+                    "name": "Slug",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": true,
+                    "validations": [
+                        {
+                            "unique": true
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "date",
+                    "name": "Date",
+                    "type": "Date",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "thumb_img_path",
+                    "name": "Blog Feed Image",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "id": "img_path",
+                    "name": "Featured Image",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "id": "excerpt",
+                    "name": "Excerpt",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "content",
+                    "name": "Content",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "The title of the post."
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "slug": {
+                    "settings": {
+                        "helpText": "A string used to generate the URL path of this page."
+                    },
+                    "widgetId": "slugEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The text shown just below the Title or the Featured Image."
+                    },
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "date": {
+                    "settings": {
+                        "format": "dateonly"
+                    },
+                    "widgetId": "datePicker",
+                    "widgetNamespace": "builtin"
+                },
+                "thumb_img_path": {
+                    "settings": {
+                        "helpText": "The image shown in the blog feed."
+                    },
+                    "widgetId": "assetLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "img_path": {
+                    "settings": {
+                        "helpText": "The image shown below the title."
+                    },
+                    "widgetId": "assetLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "excerpt": {
+                    "settings": {
+                        "helpText": "The excerpt of the post displayed in the blog feed."
+                    },
+                    "widgetId": "markdown",
+                    "widgetNamespace": "builtin"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "Page content"
+                    },
+                    "widgetId": "markdown",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_faq",
+            "name": "FAQ Section",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "section_id",
+                    "name": "Element ID of this section",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "bg",
+                    "name": "Background",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "gray",
+                                "white"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "faqitems",
+                    "name": "FAQ Items",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "section_faq_faqitems"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "section_id": {
+                    "settings": {
+                        "helpText": "The element ID can be used to link to this section from another section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "title": {
+                    "settings": {
+                        "helpText": "The title of this section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The subtitle of the section."
+                    },
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "bg": {
+                    "settings": {
+                        "helpText": "The background of the section.",
+                        "defaultValue": "gray"
+                    },
+                    "widgetId": "default-field-value",
+                    "widgetNamespace": "extension"
+                },
+                "faqitems": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_features_featureslist",
+            "name": "Features Section Feature",
+            "displayField": "title",
+            "description": "Model for 'featureslist' field used in 'section_features' model",
+            "fields": [
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "content",
+                    "name": "Content",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "id": "actions",
+                    "name": "Action Buttons",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "The text content of the feature."
+                    },
+                    "widgetId": "markdown",
+                    "widgetNamespace": "builtin"
+                },
+                "image": {
+                    "settings": {
+                        "helpText": "The image of the feature."
+                    },
+                    "widgetId": "assetLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "actions": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_features",
+            "name": "Features Section",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "section_id",
+                    "name": "Element ID of this section",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "bg",
+                    "name": "Background",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "gray",
+                                "white"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "featureslist",
+                    "name": "Features List",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "section_features_featureslist"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "section_id": {
+                    "settings": {
+                        "helpText": "The element ID can be used to link to this section from another section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "title": {
+                    "settings": {
+                        "helpText": "The title of this section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The subtitle of the section."
+                    },
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "bg": {
+                    "settings": {
+                        "helpText": "The background of the section.",
+                        "defaultValue": "gray"
+                    },
+                    "widgetId": "default-field-value",
+                    "widgetNamespace": "extension"
+                },
+                "featureslist": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_hero",
+            "name": "Hero Section",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "section_id",
+                    "name": "Element ID of this section",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "content",
+                    "name": "Content",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "id": "actions",
+                    "name": "Action Buttons",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "section_id": {
+                    "settings": {
+                        "helpText": "The element ID can be used to link to this section from another section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "title": {
+                    "settings": {
+                        "helpText": "The title of this section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "content": {
+                    "settings": {
+                        "helpText": "The text content of the section."
+                    },
+                    "widgetId": "markdown",
+                    "widgetNamespace": "builtin"
+                },
+                "image": {
+                    "settings": {
+                        "helpText": "The image of the section."
+                    },
+                    "widgetId": "assetLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "actions": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_reviews_reviews",
+            "name": "Reviews Section Review",
+            "displayField": "author",
+            "description": "Model for 'reviews' field used in 'section_reviews' model",
+            "fields": [
+                {
+                    "id": "author",
+                    "name": "Author",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "avatar",
+                    "name": "Avatar",
+                    "type": "Link",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "linkType": "Asset"
+                },
+                {
+                    "id": "content",
+                    "name": "Content",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "author": {
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "avatar": {
+                    "widgetId": "assetLinkEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "content": {
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_posts",
+            "name": "Posts Section",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "section_id",
+                    "name": "Element ID of this section",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "bg",
+                    "name": "Background",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "gray",
+                                "white"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                }
+            ],
+            "editorInterfaceControls": {
+                "section_id": {
+                    "settings": {
+                        "helpText": "The element ID can be used to link to this section from another section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "title": {
+                    "settings": {
+                        "helpText": "The title of this section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The subtitle of the section."
+                    },
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "bg": {
+                    "settings": {
+                        "helpText": "The background of the section.",
+                        "defaultValue": "gray"
+                    },
+                    "widgetId": "default-field-value",
+                    "widgetNamespace": "extension"
+                }
+            }
+        },
+        {
+            "id": "section_pricing",
+            "name": "Pricing Section",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "section_id",
+                    "name": "Element ID of this section",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "bg",
+                    "name": "Background",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "gray",
+                                "white"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "pricingplans",
+                    "name": "Pricing Plans",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "section_pricing_pricingplans"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "section_id": {
+                    "settings": {
+                        "helpText": "The element ID can be used to link to this section from another section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "title": {
+                    "settings": {
+                        "helpText": "The title of this section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The subtitle of the section."
+                    },
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "bg": {
+                    "settings": {
+                        "helpText": "The background of the section.",
+                        "defaultValue": "gray"
+                    },
+                    "widgetId": "default-field-value",
+                    "widgetNamespace": "extension"
+                },
+                "pricingplans": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_pricing_pricingplans",
+            "name": "Pricing Section Plan",
+            "displayField": "title",
+            "description": "Model for 'pricingplans' field used in 'section_pricing' model",
+            "fields": [
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "price",
+                    "name": "Price",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "details",
+                    "name": "Details",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "highlight",
+                    "name": "Highlight",
+                    "type": "Boolean",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "actions",
+                    "name": "Action Buttons",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "action"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "price": {
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "details": {
+                    "widgetId": "markdown",
+                    "widgetNamespace": "builtin"
+                },
+                "highlight": {
+                    "settings": {
+                        "helpText": "Make the plan stand out by adding a distinctive style.",
+                        "defaultValue": false
+                    },
+                    "widgetId": "default-boolean-value",
+                    "widgetNamespace": "extension"
+                },
+                "actions": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "landing",
+            "name": "Landing Page",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": true,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "slug",
+                    "name": "Slug",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": true,
+                    "validations": [
+                        {
+                            "unique": true
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "sections",
+                    "name": "Sections",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "section_content",
+                                    "section_cta",
+                                    "section_faq",
+                                    "section_features",
+                                    "section_hero",
+                                    "section_posts",
+                                    "section_pricing",
+                                    "section_reviews",
+                                    "section_contact"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "title": {
+                    "settings": {
+                        "helpText": "The title of the page."
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "slug": {
+                    "settings": {
+                        "helpText": "A string used to generate the URL path of this page."
+                    },
+                    "widgetId": "slugEditor",
+                    "widgetNamespace": "builtin"
+                },
+                "sections": {
+                    "settings": {
+                        "helpText": "Home page sections."
+                    },
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        },
+        {
+            "id": "section_reviews",
+            "name": "Reviews Section",
+            "displayField": "title",
+            "description": null,
+            "fields": [
+                {
+                    "id": "section_id",
+                    "name": "Element ID of this section",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "subtitle",
+                    "name": "Subtitle",
+                    "type": "Text",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "bg",
+                    "name": "Background",
+                    "type": "Symbol",
+                    "localized": false,
+                    "required": false,
+                    "validations": [
+                        {
+                            "in": [
+                                "gray",
+                                "white"
+                            ]
+                        }
+                    ],
+                    "disabled": false,
+                    "omitted": false
+                },
+                {
+                    "id": "reviews",
+                    "name": "Reviews",
+                    "type": "Array",
+                    "localized": false,
+                    "required": false,
+                    "validations": [],
+                    "disabled": false,
+                    "omitted": false,
+                    "items": {
+                        "type": "Link",
+                        "validations": [
+                            {
+                                "linkContentType": [
+                                    "section_reviews_reviews"
+                                ]
+                            }
+                        ],
+                        "linkType": "Entry"
+                    }
+                }
+            ],
+            "editorInterfaceControls": {
+                "section_id": {
+                    "settings": {
+                        "helpText": "The element ID can be used to link to this section from another section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "title": {
+                    "settings": {
+                        "helpText": "The title of this section"
+                    },
+                    "widgetId": "singleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "subtitle": {
+                    "settings": {
+                        "helpText": "The subtitle of the section."
+                    },
+                    "widgetId": "multipleLine",
+                    "widgetNamespace": "builtin"
+                },
+                "bg": {
+                    "settings": {
+                        "helpText": "The background of the section.",
+                        "defaultValue": "gray"
+                    },
+                    "widgetId": "default-field-value",
+                    "widgetNamespace": "extension"
+                },
+                "reviews": {
+                    "widgetId": "entryLinksEditor",
+                    "widgetNamespace": "builtin"
+                }
+            }
+        }
+    ]
+}
