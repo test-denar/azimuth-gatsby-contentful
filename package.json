@@ -16,6 +16,7 @@
     "gatsby": "2.19.16",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sass": "^2.1.28",
+    "gatsby-plugin-schema-snapshot": "^1.0.0",
     "gatsby-source-contentful": "^2.1.85",
     "lodash": "^4.17.15",
     "marked": "^0.8.0",
