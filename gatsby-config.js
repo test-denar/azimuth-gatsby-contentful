@@ -12,7 +12,17 @@ module.exports = {
                 accessToken: process.env.CONTENTFUL_PREVIEW ? process.env.CONTENTFUL_PREVIEW_TOKEN : process.env.CONTENTFUL_DELIVERY_TOKEN,
                 host: process.env.CONTENTFUL_PREVIEW ? 'preview.contentful.com' : 'cdn.contentful.com',
                 useNameForId: false
-            },
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-schema-snapshot',
+            options: {
+                path: 'schema.gql',
+                exclude: {
+                    plugins: ['gatsby-source-npm-package-search']
+                },
+                update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT
+            }
         }
     ]
 };
