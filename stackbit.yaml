@@ -15,8 +15,8 @@ pageModels:
     slugField: slug
     url: "/posts/%slug%"
 pageData:
-  "/":
-    NUXEditorExpandedPaths:
+  - pagePath: "/"
+    initialExpandedPaths:
       - '[0].fields.title'
       - '[0].fields.sections'
       - '[0].fields.sections.items[0]'
