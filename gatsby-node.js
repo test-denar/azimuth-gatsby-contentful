@@ -54,14 +54,20 @@ exports.createPages = ({ graphql, actions }) => {
             const contentfulId = node.contentful_id;
             const component = path.resolve(`./src/templates/${template}.js`);
             const slug = node.slug;
+
+            // if slug is not defined, don't create a page
+            if (!slug) {
+                console.error(`Error: page of type "${template}" and contentful id "${contentfulId}" does not have a "slug" field, page will not be created`);
+                return;
+            }
+
             const pagePath = template === 'post' ? `posts/${_.trim(slug, '/')}` : slug;
 
             const page = {
                 path: pagePath,
                 component: component,
                 context: {
-                    contentfulId: contentfulId,
-                    slug: slug
+                    contentfulId: contentfulId
                 }
             };
 
