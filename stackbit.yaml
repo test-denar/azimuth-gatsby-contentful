@@ -17,6 +17,7 @@ pageModels:
 pageData:
   - pagePath: "/"
     initialExpandedPaths:
+      - '[0]'
       - '[0].fields.title'
       - '[0].fields.sections'
       - '[0].fields.sections.items[0]'
