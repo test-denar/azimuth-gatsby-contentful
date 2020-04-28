@@ -1,47 +1,38 @@
 {
-    "contentfulAccessToken": "CFPAT-Uy5iIWbTlZ7p8BPVpU3CLnFReu_rJm86Kcr7Ce3QVu0",
-    "contentfulSpaceId": "uk6ulrkd3did",
-    "contentfulOrganizationId": "6E7PniffSWKa2ouf5CyLAO",
-    "site": {
-        "config": {
-            "data": {
-                "title": "Azimuth Gatsby Contentful Demo"
-            }
-        },
-        "stackbitYaml": {
-            "uploadDir": "images"
-        },
-        "absPath": ".",
-        "staticDir": "."
-    },
-    "cmsConsts": {
-        "pageContentFieldKey": "content",
-        "referenceTypeKey": "type",
-        "shouldAddReferenceTypeKeyField": false
-    },
+    "cmsType": "contentful",
+    "projectTitle": "Azimuth Gatsby Contentful Demo",
+    "projectDir": ".",
+    "staticDir": ".",
+    "uploadDir": "images",
+    "pageContentFieldKey": "content",
+    "referenceTypeKey": "type",
+    "shouldAddReferenceTypeKeyField": false,
     "models": [
         {
             "type": "page",
             "name": "landing",
-            "label": "Landing Page"
+            "label": "Landing Page",
+            "fieldNames": null
         },
         {
             "type": "page",
             "name": "page",
-            "label": "Page"
+            "label": "Page",
+            "fieldNames": null
         },
         {
             "type": "page",
             "name": "post",
-            "label": "Post"
+            "label": "Post",
+            "fieldNames": null
         },
         {
-            "type": "data",
+            "type": "config",
             "name": "config",
-            "label": "Global Site Config"
+            "label": "Global Site Config",
+            "fieldNames": null
         }
     ],
-    "modelsByName": {},
     "content": [
         {
             "modelName": "page",
@@ -200,7 +191,7 @@
         },
         {
             "modelName": "config",
-            "modelType": "object",
+            "modelType": "config",
             "relPath": "config",
             "data": {
                 "title": "Stackbit Azimuth Theme",
