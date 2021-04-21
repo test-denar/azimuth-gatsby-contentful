@@ -32,7 +32,7 @@ export {
     Layout
 };
 
-export default {
+const modules = {
     CtaButtons,
     Footer,
     Header,
@@ -49,3 +49,5 @@ export default {
     SubscribeForm,
     Layout
 };
+
+export default modules;

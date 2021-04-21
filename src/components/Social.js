@@ -9,7 +9,7 @@ export default class Social extends React.Component {
             <ul className="social-links">
                 {_.map(_.get(this.props, 'socialLinks'), (action, actionIdx) => (
                     <li key={actionIdx}>
-                        <Action action={action}/>
+                        <Action action={action} />
                     </li>
                 ))}
             </ul>

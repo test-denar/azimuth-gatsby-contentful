@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {classNames} from '../utils';
+import { classNames } from '../utils';
 import Action from './Action';
 
 export default class CtaButtons extends React.Component {
@@ -16,7 +16,7 @@ export default class CtaButtons extends React.Component {
                     <Action
                         key={actionIdx}
                         action={action}
-                        className={classNames('button', {'secondary': !_.get(action, 'primary')})}
+                        className={classNames('button', { secondary: !_.get(action, 'primary') })}
                     />
                 ))}
             </p>

@@ -61,7 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
                 return;
             }
 
-            const pagePath = template === 'post' ? `posts/${_.trim(slug, '/')}` : slug;
+            const pagePath = template === 'post' ? `blog/${_.trim(slug, '/')}` : slug;
 
             const page = {
                 path: pagePath,
