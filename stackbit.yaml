@@ -15,7 +15,7 @@ publishDir: public
 # creating a new site from this theme via https://app.stackbit.com/create.
 import:
   type: contentful
-  contentFile: contentful-export/export-config.json
+  contentFile: contentful-export/export.json
   spaceIdEnvVar: CONTENTFUL_SPACE_ID
   accessTokenEnvVar: CONTENTFUL_ACCESS_TOKEN
 
