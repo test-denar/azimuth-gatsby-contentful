@@ -94,26 +94,28 @@ To contribute to this theme please follow the following steps:
 
 1. Clone this repository locally
 
-1. Install Contentful CLI
+1. Install Contentful Import and Contentful Export
 
-        npm install -g contentful-cli
+        npm install -g contentful-import contentful-export
 
 1. Create a new Space in Contentful
 
 1. Create new Contentful Personal Access Tokens [here](https://app.contentful.com/account/profile/cma_tokens/)
 
+1. Install dependencies
+
+        npm install
+
 1. Import Contentful data to the new space. Replace the `CONTENTFUL_SPACE_ID` with the new space ID and the `CONTENTFUL_MANAGEMENT_TOKEN` with the Personal Access Tokens.
 
    ```shell
-   contentful space import \
-     --content-file=contentful-export/export.json \
+   ./node_modules/.bin/contentful-import \
+     --config=contentful-export/import-config.json \
      --space-id=CONTENTFUL_SPACE_ID \
      --management-token=CONTENTFUL_MANAGEMENT_TOKEN
    ```
 
-1. Install dependencies
-
-        npm install
+   ☝️ Do not use `contentful space import` as it doesn't support uploading assets (on the time of this writing).
 
 1. Create Content Delivery API - access token via Contentful app "Settings" => "API Keys" => "Content delivery / preview tokens" => "Add API Key".
 
@@ -137,7 +139,7 @@ To contribute to this theme please follow the following steps:
    back to the `contentful-export/export-config.json` file by running:
 
    ```shell
-   contentful space export \
+   ./node_modules/.bin/contentful-export \
      --config=contentful-export/export-config.json \
      --space-id=CONTENTFUL_SPACE_ID \
      --management-token=CONTENTFUL_MANAGEMENT_TOKEN
