@@ -1,5 +1,5 @@
 {
-    "exportDir": "contentful-export",
+    "exportDir": "contentful",
     "contentFile": "export.json",
     "downloadAssets": true
 }

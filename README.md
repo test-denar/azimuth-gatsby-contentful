@@ -102,10 +102,10 @@ To contribute to this theme please follow the following steps:
 
         npm install
 
-1. Import Contentful data stored in `contentful-export/export.jon` to the new space by running the following command. Replace the `<management_token>` placeholder with your Personal Access Token and the `<space_id>` placeholder with the new space ID.
+1. Import Contentful data stored in `contentful/export.json` to the new space by running the following command. Replace the `<management_token>` placeholder with your Personal Access Token and the `<space_id>` placeholder with the new space ID.
 
    ```shell
-   ./contentful-export/import.js <management_token> <space_id>
+   ./contentful/import.js <management_token> <space_id>
    ```
 
 1. Create "Content Delivery API - Access Token" via Contentful app "Settings" => "API Keys" => "Content delivery / preview tokens" => "Add API Key".
@@ -126,10 +126,10 @@ To contribute to this theme please follow the following steps:
    Update site code, and the content in Contentful.
    
 
-1. Once you finish updating the code and contents, export the contents back to the `contentful-export/export.json` file by running the following command. Replace the `<management_token>` placeholder with your Personal Access Token and the `<space_id>` placeholder with the new space ID.
+1. Once you finish updating the code and contents, export the contents back to the `contentful/export.json` file by running the following command. Replace the `<management_token>` placeholder with your Personal Access Token and the `<space_id>` placeholder with the new space ID.
 
    ```shell
-   ./contentful-export/export.js <management_token> <space_id>
+   ./contentful/export.js <management_token> <space_id>
    ```
 
 1. Commit, push and submit a pull-request 🎉
