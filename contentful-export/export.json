@@ -2453,20 +2453,20 @@
           "fieldId": "primary",
           "settings": {
             "helpText": "Is primary action (used in header menu only)",
-            "readOnly": false,
-            "defaultValue": false
+            "trueLabel": "Yes",
+            "falseLabel": "No"
           },
-          "widgetId": "default-boolean-value",
-          "widgetNamespace": "extension"
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "new_window",
           "settings": {
-            "readOnly": false,
-            "defaultValue": false
+            "trueLabel": "Yes",
+            "falseLabel": "No"
           },
-          "widgetId": "default-boolean-value",
-          "widgetNamespace": "extension"
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
         }
       ]
     },
@@ -2534,10 +2534,11 @@
           "fieldId": "has_nav",
           "settings": {
             "helpText": "Display the navigation menu bar in the header.",
-            "defaultValue": true
+            "trueLabel": "Yes",
+            "falseLabel": "No"
           },
-          "widgetId": "default-boolean-value",
-          "widgetNamespace": "extension"
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "nav_links",
@@ -2613,10 +2614,11 @@
           "fieldId": "has_nav",
           "settings": {
             "helpText": "Display the secondary navigation menu in the footer.",
-            "defaultValue": true
+            "trueLabel": "Yes",
+            "falseLabel": "No"
           },
-          "widgetId": "default-boolean-value",
-          "widgetNamespace": "extension"
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "nav_title",
@@ -2638,10 +2640,11 @@
           "fieldId": "has_social",
           "settings": {
             "helpText": "Display social links in the footer.",
-            "defaultValue": true
+            "trueLabel": "Yes",
+            "falseLabel": "No"
           },
-          "widgetId": "default-boolean-value",
-          "widgetNamespace": "extension"
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "social_title",
@@ -2663,10 +2666,11 @@
           "fieldId": "has_subscribe",
           "settings": {
             "helpText": "Display the newsletter subscription form in the footer.",
-            "defaultValue": true
+            "trueLabel": "Yes",
+            "falseLabel": "No"
           },
-          "widgetId": "default-boolean-value",
-          "widgetNamespace": "extension"
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "subscribe_title",
@@ -2840,11 +2844,10 @@
         {
           "fieldId": "palette",
           "settings": {
-            "helpText": "The color palette of the theme.",
-            "defaultValue": "blue"
+            "helpText": "The color palette of the theme."
           },
-          "widgetId": "default-field-value",
-          "widgetNamespace": "extension"
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "header",
@@ -2937,11 +2940,10 @@
         {
           "fieldId": "bg",
           "settings": {
-            "helpText": "The background of the section.",
-            "defaultValue": "gray"
+            "helpText": "The background of the section."
           },
-          "widgetId": "default-field-value",
-          "widgetNamespace": "extension"
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
         }
       ]
     },
@@ -3190,11 +3192,10 @@
         {
           "fieldId": "bg",
           "settings": {
-            "helpText": "The background of the section.",
-            "defaultValue": "gray"
+            "helpText": "The background of the section."
           },
-          "widgetId": "default-field-value",
-          "widgetNamespace": "extension"
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "actions",
@@ -3482,11 +3483,10 @@
         {
           "fieldId": "bg",
           "settings": {
-            "helpText": "The background of the section.",
-            "defaultValue": "gray"
+            "helpText": "The background of the section."
           },
-          "widgetId": "default-field-value",
-          "widgetNamespace": "extension"
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
         }
       ]
     },
@@ -3644,11 +3644,10 @@
         {
           "fieldId": "bg",
           "settings": {
-            "helpText": "The background of the section.",
-            "defaultValue": "gray"
+            "helpText": "The background of the section."
           },
-          "widgetId": "default-field-value",
-          "widgetNamespace": "extension"
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "pricingplans",
@@ -3720,10 +3719,11 @@
           "fieldId": "highlight",
           "settings": {
             "helpText": "Make the plan stand out by adding a distinctive style.",
-            "defaultValue": false
+            "trueLabel": "Yes",
+            "falseLabel": "No"
           },
-          "widgetId": "default-boolean-value",
-          "widgetNamespace": "extension"
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "actions",
@@ -3873,11 +3873,10 @@
         {
           "fieldId": "bg",
           "settings": {
-            "helpText": "The background of the section.",
-            "defaultValue": "gray"
+            "helpText": "The background of the section."
           },
-          "widgetId": "default-field-value",
-          "widgetNamespace": "extension"
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "reviews",
@@ -3957,11 +3956,10 @@
         {
           "fieldId": "bg",
           "settings": {
-            "helpText": "The background of the section.",
-            "defaultValue": "gray"
+            "helpText": "The background of the section."
           },
-          "widgetId": "default-field-value",
-          "widgetNamespace": "extension"
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "faqitems",
@@ -4041,11 +4039,10 @@
         {
           "fieldId": "bg",
           "settings": {
-            "helpText": "The background of the section.",
-            "defaultValue": "gray"
+            "helpText": "The background of the section."
           },
-          "widgetId": "default-field-value",
-          "widgetNamespace": "extension"
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
         },
         {
           "fieldId": "featureslist",

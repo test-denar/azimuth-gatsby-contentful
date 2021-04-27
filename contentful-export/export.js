@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-const path = require('path');
-const contentfulImport = require('contentful-import');
+const contentfulExport = require('contentful-export');
 
 const managementToken = process.env.CONTENTFUL_MANAGEMENT_TOKEN || process.argv[2];
 const spaceId = process.env.CONTENTFUL_SPACE_ID || process.argv[3];
@@ -12,17 +11,17 @@ if (!managementToken || !spaceId) {
 }
 
 const options = {
-    contentFile: path.join(__dirname, 'export.json'),
     spaceId: spaceId,
     managementToken: managementToken,
-    uploadAssets: true,
-    assetsDirectory: __dirname
+    exportDir: __dirname,
+    contentFile: 'export.json',
+    downloadAssets: true
 };
 
-contentfulImport(options)
-    .then(() => {
-        console.log('Data imported successfully');
+contentfulExport(options)
+    .then((result) => {
+        console.log('Your space data:', result);
     })
     .catch((error) => {
-        console.error('Error importing content:', error);
+        console.log('Error exporting content:', error);
     });

@@ -94,10 +94,6 @@ To contribute to this theme please follow the following steps:
 
 1. Clone this repository locally
 
-1. Install Contentful Import and Contentful Export
-
-        npm install -g contentful-import contentful-export
-
 1. Create a new Space in Contentful
 
 1. Create new Contentful Personal Access Tokens [here](https://app.contentful.com/account/profile/cma_tokens/)
@@ -106,18 +102,13 @@ To contribute to this theme please follow the following steps:
 
         npm install
 
-1. Import Contentful data to the new space. Replace the `CONTENTFUL_SPACE_ID` with the new space ID and the `CONTENTFUL_MANAGEMENT_TOKEN` with the Personal Access Tokens.
+1. Import Contentful data stored in `contentful-export/export.jon` to the new space by running the following command. Replace the `<management_token>` placeholder with your Personal Access Token and the `<space_id>` placeholder with the new space ID.
 
    ```shell
-   ./node_modules/.bin/contentful-import \
-     --config=contentful-export/import-config.json \
-     --space-id=CONTENTFUL_SPACE_ID \
-     --management-token=CONTENTFUL_MANAGEMENT_TOKEN
+   ./contentful-export/import.js <management_token> <space_id>
    ```
 
-   ☝️ Do not use `contentful space import` as it doesn't support uploading assets (on the time of this writing).
-
-1. Create Content Delivery API - access token via Contentful app "Settings" => "API Keys" => "Content delivery / preview tokens" => "Add API Key".
+1. Create "Content Delivery API - Access Token" via Contentful app "Settings" => "API Keys" => "Content delivery / preview tokens" => "Add API Key".
 
 1. Define following environment variables to allow Gatsby to fetch the content
    from Contentful when developing or building the site. Replace {SPACE_ID} with your Space ID and {CDA} with the mew Content Delivery API - access token.
@@ -135,14 +126,10 @@ To contribute to this theme please follow the following steps:
    Update site code, and the content in Contentful.
    
 
-1. Once you finish updating the code and contents, export the contents
-   back to the `contentful-export/export-config.json` file by running:
+1. Once you finish updating the code and contents, export the contents back to the `contentful-export/export.json` file by running the following command. Replace the `<management_token>` placeholder with your Personal Access Token and the `<space_id>` placeholder with the new space ID.
 
    ```shell
-   ./node_modules/.bin/contentful-export \
-     --config=contentful-export/export-config.json \
-     --space-id=CONTENTFUL_SPACE_ID \
-     --management-token=CONTENTFUL_MANAGEMENT_TOKEN
+   ./contentful-export/export.js <management_token> <space_id>
    ```
 
 1. Commit, push and submit a pull-request 🎉
