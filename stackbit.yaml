@@ -16,6 +16,8 @@ publishDir: public
 import:
   type: contentful
   contentFile: contentful/export.json
+  uploadAssets: true
+  assetsDirectory: contentful
   spaceIdEnvVar: CONTENTFUL_SPACE_ID
   accessTokenEnvVar: CONTENTFUL_ACCESS_TOKEN
 
